@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- EMI-Calculator-section -->
+    <section class="EMI-calculator-section ">
+        <div class="container">
+            <div class="row animate__animated animate__zoomIn">
+                <div class="col-md-5">
+                    <div class="details-chart">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <div class="d-flex justify-content-between">
+                            <div class="btn">
+                                <a href="" class="apply-btn">Apply Online</a>
+                            </div>
+                            <div class="btn">
+                                <a href="" class="apply-btn calculate-emi" id="calculate-btn">Calculate</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="view-details">
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <div class="emi-amount">
+                                    <p>Monthly EMI</p>
+                                    <span id="monthly-emi">6,248</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="emi-amount">
+                                    <p>Total Interest</p>
+                                    <span id="total-interest">1,49,784</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="emi-amount">
+                                    <p>Total Amount To Pay</p>
+                                    <span id="total-pay">5,99,784</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="enter-details">
+                        <form action="" method="" id="loan-form">
+                            <div class="slidecontainer">
+                                <div class="text-value">
+                                    <p>Loan Amount</p>
+                                    <div class="input-box">
+                                        <input type="number" min="100000" max="1000000" value="400000" class="range-value" id="loan-amount">
+                                    </div>
+                                </div>
+                                <input type="range" min="100000" max="1000000" value="400000" step="1000" id="loan-amount-slider" class="range__slider" oninput="loanAmountSlider(this.value)" style="background: linear-gradient(to right, rgb(108, 99, 255) 33.3333%, rgb(255, 117, 85) 33.4333%); width: 100%;height: 5px;">
+                                <div class="input-steps">
+                                    <span class="stick" style="left: 0%;">1L</span>
+                                    <span class="stick" style="left: 11.11%;">2L</span>
+                                    <span class="stick" style="left: 22.22%;">3L</span>
+                                    <span class="stick" style="left: 33.33%;">4L</span>
+                                    <span class="stick" style="left: 44.44%;">5L</span>
+                                    <span class="stick" style="left: 55.55%;">6L</span>
+                                    <span class="stick" style="left: 66.66%;">7L</span>
+                                    <span class="stick" style="left: 77.77%;">8L</span>
+                                    <span class="stick" style="left: 88.88%;">9L</span>
+                                    <span class="stick" style="left: 99.99%;">10L</span>
+                                </div>
+                            </div>
+                            <div class="slidecontainer">
+                                <div class="text-value">
+                                    <p>Loan Interest</p>
+                                    <div class="input-box">
+                                        <input type="number" min="5" max="20" value="7.5" class="range-value" id="loan-interest">
+                                    </div>
+                                </div>
+                                <input type="range" min="5" max="20" value="7.5" step=".5" class="range__slider" id="loan-slider" oninput="loanIntrestSlider(this.value)" style="background: linear-gradient(to right, rgb(108, 99, 255) 16.6667%, rgb(255, 117, 85) 16.7667%);width: 100%;height: 5px;">
+                                <div class="input-steps">
+                                    <span class="stick" style="left: 0%;">5%</span>
+                                    <span class="stick" style="left: 16.66%;">7.5%</span>
+                                    <span class="stick" style="left: 33.32%;">10%</span>
+                                    <span class="stick" style="left: 49.98%;">12.5%</span>
+                                    <span class="stick" style="left: 66.64%;">15%</span>
+                                    <span class="stick" style="left: 83.30%;">17.5%</span>
+                                    <span class="stick" style="left: 99.99%;">20%</span>
+                                </div>
+                            </div>
+                            <div class="slidecontainer">
+                                <div class="text-value">
+                                    <p>Loan Years</p>
+                                    <div class="input-box">
+                                        <input type="number" min="1" max="20" value="8" class="range-value" id="loan-years">
+                                    </div>
+                                </div>
+                                <input type="range" min="1" max="20" value="8" step="1" class="range__slider" oninput="loanYearSlider(this.value)" style="background: linear-gradient(to right, rgb(108, 99, 255) 36.8421%, rgb(255, 117, 85) 36.9421%);width: 100%;height: 5px;">
+                                <div class="input-steps">
+                                    <span class="stick" style="left: 0%;">1Y</span>
+                                    <span class="stick" style="left: 15.75%;">4Y</span>
+                                    <span class="stick" style="left: 36.8%;">8Y</span>
+                                    <span class="stick" style="left: 57.8%;">12Y</span>
+                                    <span class="stick" style="left: 78.9%;">16Y</span>
+                                    <span class="stick" style="left: 100%;">20Y</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EMI-Calculator-section -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* background-color: rgb(12, 4, 39);
+    color: white; */
+}
+
+.EMI-calculator-section {
+    margin-top: 120px;
+    margin-bottom: 80px;
+}
+
+.details-chart a {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.details-chart .btn {
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: #ecf0f3;
+    margin-top: 15px;
+}
+
+.details-chart .btn:hover {
+    transform: translateY(5px);
+    color: red;
+}
+
+.view-details {
+    padding: 10px 0px;
+}
+
+.view-details .emi-amount {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.view-details .emi-amount p {
+    text-align: center;
+    /* color: #fff; */
+    margin-bottom: 10px;
+}
+
+.view-details .emi-amount span {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.enter-details .slidecontainer {
+    margin-bottom: 80px;
+}
+
+.enter-details .slidecontainer .text-value {
+    display: flex;
+    justify-content: space-between;
+}
+
+.enter-details .slidecontainer .text-value p {
+    /* color: #fff; */
+    margin-bottom: 2rem;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.enter-details .slidecontainer .text-value .input-box {
+    text-align: right;
+}
+
+.enter-details .slidecontainer .input-steps {
+    /* color: #fff; */
+    position: relative;
+    margin: 0 10px;
+}
+
+.enter-details .slidecontainer .text-value .input-box .range-value {
+    background-color: transparent;
+    border: 2px solid black;
+    color: red;
+    text-align: center;
+    padding: 5px 10px;
+    width: 100px;
+}
+
+.emi-calc-box input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+    height: 2px;
+}
+
+.enter-details .slidecontainer .input-steps {
+    /* color: #fff; */
+    position: relative;
+    margin: 0 10px;
+}
+
+.enter-details .slidecontainer .input-steps {
+    /* color: #fff; */
+    position: relative;
+    margin: 0 10px;
+}
+
+.enter-details .slidecontainer .input-steps .stick {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 3px 2px;
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+.enter-details .slidecontainer .input-steps .stick::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
