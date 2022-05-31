@@ -13,16 +13,19 @@ const totalAmount = document.getElementById("total-pay");
 
 function loanAmountSlider(val) {
     loanAmount.value = val
+    computeResults();
 }
 
 
 function loanIntrestSlider(val) {
     loanIntrest.value = val
+    computeResults();
 }
 
 
 function loanYearSlider(val) {
     loanYear.value = val
+    computeResults();
 }
 
 // const emiCalculation = () => {
@@ -30,10 +33,10 @@ function loanYearSlider(val) {
 // }
 
 
-document.getElementById("calculate-btn").addEventListener("click", computeResults);
+// document.getElementById("calculate-btn").addEventListener("click", computeResults);
 
 function computeResults(e) {
-    e.preventDefault();
+
 
 
     const UIamount = loanAmount.value;
@@ -43,26 +46,26 @@ function computeResults(e) {
     const CalculateInterest = parseFloat(UIinterest) / 100 / 12;
     const calculatedPayments = parseFloat(UIyears) * 12;
 
-    //     //Compute monthly Payment
+    //Compute monthly Payment
 
     const x = Math.pow(1 + CalculateInterest, calculatedPayments);
     const monthly = (principal * x * CalculateInterest) / (x - 1);
     const monthlyPayment = monthly.toFixed(2);
-    console.log(monthlyPayment)
-        //     //Compute Interest
+
+    //Compute Interest
 
     const totalInterest = (monthly * calculatedPayments - principal).toFixed(2);
 
-    //     //Compute Total Payment
+    //Compute Total Payment
 
     const totalPayment = (monthly * calculatedPayments).toFixed(2);
 
-    //     //Show results
+    //Show results
 
     Amount.innerHTML = "₹ " + monthlyPayment;
     Intrest.innerHTML = "₹ " + totalInterest;
     totalAmount.innerHTML = "₹ " + totalPayment;
-
+    // e.preventDefault();
 }
 
 
